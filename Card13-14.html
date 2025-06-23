@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="Lr_8.css">
+  <title>ЛР 13-14</title>
+    <style>
+         body {
+      font-family: sans-serif;
+      font-size: 14px;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    a {
+      color: blue; /* по умолчанию */
+      text-decoration: underline;
+    }
+    #element1 {
+      padding: 10px;
+      background-color: #dff0d8;
+      border: 1px solid #3c763d;
+      width: max-content;
+      cursor: pointer;
+          .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    input.error, textarea.error {
+      border-color: red;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 13px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+
+    .captcha-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .submit-btn button {
+      padding: 10px 20px;
+      background-color: #1ca4e9;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .submit-btn button:hover {
+      background-color: #138cd0;
+    }
+    }
+  </style>
+</head>
+<body>
+
+  <div style="margin: 20px 0;">
+    <a href="Main_2.html"><button>Главная (Main_2)</button></a>
+    <a href="Lr_Main.html"><button>Лабораторные (Lr_Main)</button></a>
+    <a href="Card.html"><button>Карточка (Card)</button></a>
+    <a href="Card13-14.html"><button>Карточка 13-14</button></a>
+  </div>
+
+
+
+  <!-- 1. ФИО в виде абзаца -->
+  <div id="text"><p id="element1">Торгонский Федор Николаевич</p></div>
+
+  <!-- 2. Ссылка на любимый сайт -->
+  <p>
+    Мой любимый сайт: 
+    <a href="https://Itch.io" target="_blank">Google</a>
+  </p>
+
+  <!-- 3. Любое изображение -->
+  <img src="category9.jpg" alt="Пример изображения" width="200">
+
+<button onclick="applyStyles()">Изменить стиль</button>
+<button onclick="showOSInfo()">Показать информацию об ОС</button>
+
+<div class="form-container">
+    <div class="form-wrapper">
+      <div class="form-header">Форма обратной связи</div>
+<form id="contactForm" novalidate>
+  <div class="form-group">
+    <label for="name">Введите ваше имя:</label>
+    <input type="text" id="name" placeholder="Например, Иван Иванович">
+    <div class="error-message" id="nameError"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Введите адрес email:</label>
+    <input type="email" id="email" placeholder="Например, ivan@mail.ru">
+    <div class="error-message" id="emailError"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Введите сообщение:</label>
+    <textarea id="message" placeholder="Введите сообщение от 20 до 500 символов"></textarea>
+    <div class="error-message" id="messageError"></div>
+  </div>
+
+  <div class="captcha-row">
+    <img id="captcha" src="https://dummyimage.com/120x40/1ca4e9/ffffff&text=Tt42Fu" alt="Капча">
+    <button type="button" onclick="refreshCaptcha()">🔄 Обновить</button>
+  </div>
+
+  <div class="form-group">
+    <label for="captchaInput">Введите код с изображения:</label>
+    <input type="text" id="captchaInput">
+    <div class="error-message" id="captchaError"></div>
+  </div>
+
+  <div class="submit-btn">
+    <button type="submit">Отправить</button>
+  </div>
+</form>
+
+
+      
+    </div>
+  </div>
+
+
+
+  <!-- Блок для вывода cookie -->
+  <div id="output" style="margin-top: 20px; font-family: monospace;"></div>
+
+  <script>
+    // Устанавливаем cookie для демонстрации (если ещё нет)
+    if (!document.cookie.includes("testCookie")) {
+      document.cookie = "testCookie=HelloWorld";
+    }
+
+    // Функция для вывода cookie
+    function showCookies() {
+      const outputDiv = document.getElementById("output");
+      const time = new Date().toLocaleTimeString();
+      outputDiv.innerHTML += `<div>[${time}] Cookies: ${document.cookie}</div>`;
+    }
+
+    // Запуск вывода cookies каждые 2 секунды
+    setInterval(showCookies, 2000);
+
+    // Удаление элемента №1 при клике
+    document.getElementById("element1").addEventListener("click", function () {
+      this.remove(); // Удаляет сам себя
+    });
+  </script>
+
+  <script>
+    function applyStyles() {
+      // 1. Установим фоновое изображение
+      document.body.style.backgroundImage = "url(category9.jpg)";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundPosition = "center";
+
+      // 2. Стилизуем текст
+      const text = document.getElementById("text");
+      text.style.fontFamily = "Arial";
+      text.style.fontSize = "11px";
+      text.style.color = "red";
+
+      // 3. Стилизуем все ссылки
+      const links = document.querySelectorAll("a");
+      links.forEach(link => {
+        link.style.color = "green";
+        link.style.textDecoration = "none";
+      });
+    }
+  </script>
+
+
+  <script>
+    function showOSInfo() {
+      // Получаем строку userAgent
+      const osInfo = navigator.userAgent;
+
+      // Показываем пользователю через alert
+      alert("Информация об операционной системе:\n" + osInfo);
+
+    }
+  </script>
+
+<script>
+  const CORRECT_CAPTCHA = "Tt42Fu";
+
+  function refreshCaptcha() {
+    alert("В этом примере код капчи всегда: " + CORRECT_CAPTCHA);
+  }
+
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Останавливаем отправку
+    clearErrors();
+
+    let isValid = true;
+
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+    const captchaInput = document.getElementById("captchaInput");
+
+    // Валидация имени
+    if (name.value.trim() === "") {
+      showError(name, "nameError", "Поле обязательно для заполнения");
+      isValid = false;
+    } else if (name.value.trim().length < 3) {
+      showError(name, "nameError", "Имя должно быть не менее 3 символов");
+      isValid = false;
+    }
+
+    // Валидация email
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (email.value.trim() === "") {
+      showError(email, "emailError", "Email обязателен");
+      isValid = false;
+    } else if (!emailPattern.test(email.value.trim())) {
+      showError(email, "emailError", "Неверный формат email");
+      isValid = false;
+    }
+
+    // Валидация сообщения
+    if (message.value.trim() === "") {
+      showError(message, "messageError", "Введите сообщение");
+      isValid = false;
+    } else if (message.value.trim().length < 20) {
+      showError(message, "messageError", "Минимум 20 символов");
+      isValid = false;
+    } else if (message.value.trim().length > 500) {
+      showError(message, "messageError", "Максимум 500 символов");
+      isValid = false;
+    }
+
+    // Проверка капчи
+    if (captchaInput.value.trim() === "") {
+      showError(captchaInput, "captchaError", "Введите код с изображения");
+      isValid = false;
+    } else if (captchaInput.value.trim() !== CORRECT_CAPTCHA) {
+      showError(captchaInput, "captchaError", "Код не совпадает");
+      isValid = false;
+    }
+
+    // Успех
+    if (isValid) {
+      alert("Спасибо! Форма успешно отправлена.");
+      // Здесь можно отправить форму: this.submit() или через fetch
+    }
+  });
+
+  function showError(inputElement, errorId, message) {
+    inputElement.classList.add("error");
+    document.getElementById(errorId).textContent = message;
+  }
+
+  function clearErrors() {
+    document.querySelectorAll(".error").forEach(el => el.classList.remove("error"));
+    document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+  }
+</script>
+
+</body>
+</html>

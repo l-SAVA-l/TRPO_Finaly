@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Магазин товаров</title>
+    <link rel="stylesheet" href="Lr_8.css">
+    <!-- 3 Подключить через файл -->
+    <script src="JS_9_1.js"></script>
+<script>
+    window.onload = function () {
+        console.log("Добро пожаловать! (вставка через <script> в <head>)");
+    };
+</script>
+
+
+</head>
+<body>
+  
+    <div style="margin: 20px 0;">
+    <a href="Main_2.html"><button>Главная (Main_2)</button></a>
+    <a href="Lr_Main.html"><button>Лабораторные (Lr_Main)</button></a>
+    <a href="Card.html"><button>Карточка (Card)</button></a>
+    <a href="Card13-14.html"><button>Карточка 13-14</button></a>
+  </div>
+
+     <img src="Images/lol.png" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+    <!-- Хедер с навигацией -->
+    <div id="header">
+        <div class="burger" onclick="toggleMenu()">☰</div>
+        <div class="menu">
+            <div><a href="#">Главная</a></div>
+            <div><a href="#products">Товары</a></div>
+            <div><a href="#about">О нас</a></div>
+            <div><a href="#contact">Контакты</a></div>
+        </div>
+    </div>
+     
+    <!-- Основной блок контента -->
+    <div id="body">
+        <!-- Приветственный блок -->
+         
+        <div id="Body_block1">
+            <h1>Добро пожаловать в эксклюзивный магазин!</h1>
+            <p>Мы предлагаем широкий ассортимент высококачественных товаров: от современной электроники до стильных аксессуаров для дома и отдыха. Каждый товар проходит строгий контроль качества, а наши цены приятно удивят даже самых требовательных покупателей.</p>
+            <p>Оформите заказ за несколько кликов, воспользуйтесь быстрым способом доставки и насладитесь профессиональным сервисом.</p>
+             <div class="form-container">
+    <div class="form-wrapper">
+      <div class="form-header">Форма обратной связи</div>
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Введите ваше имя:</label>
+            <input type="text" placeholder="Например, Иван Иванович">
+          </div>
+          <div class="form-group">
+            <label>Введите адрес email:</label>
+            <input type="email" placeholder="Например, ivan@mail.ru">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Введите сообщение:</label>
+          <textarea placeholder="Введите сообщение от 20 до 500 символов"></textarea>
+        </div>
+        <div class="captcha-row">
+          <img id="captcha" src="https://dummyimage.com/120x40/1ca4e9/ffffff&text=Tt42Fu" alt="Капча">
+          <button type="button" onclick="refreshCaptcha()">🔄 Обновить</button>
+        </div>
+        <div class="form-group">
+          <label>Пожалуйста, введите указанный на изображении код:</label>
+          <input type="text">
+        </div>
+        <div class="submit-btn">
+          <button onclick="alert('Привет из атрибута!')">Отправить сообщение</button> 
+          <!-- 1 способ JS -->
+        </div>
+      </form>
+    </div>
+  </div>
+        </div>
+
+        <!-- Категории товаров -->
+        <div id="selector_1">
+            <h2>Категории</h2>
+            <div id="selector_1_2">
+                <div id="№1">
+                    <img src="images/category1.jpg" alt="Категория 1" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+                    <p>Электроника</p>
+                </div>
+                <div id="№2">
+                    <img src="images/category2.jpg" alt="Категория 2" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+                    <p>Одежда</p>
+                </div>
+                <div id="№3">
+                    <img src="images/category3.jpg" alt="Категория 3" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+                    <p>Дом и сад</p>
+                </div>
+                <div id="№3_1">
+                    <img src="images/category4.jpg" alt="Категория 4" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+                    <p>Спорт</p>
+                </div>
+            </div>
+            <div id="selector_1_3">
+                <div id="№4">
+                    <img src="images/category5.jpg" alt="Категория 5" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+                    <p>Игрушки</p>
+                </div>
+                <div id="№5">
+                    <img src="images/category6.jpg" alt="Категория 6" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+                    <p>Книги</p>
+                </div>
+                <div id="№6">
+                    <img src="images/category7.jpg" alt="Категория 7" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+                    <p>Кухня</p>
+                </div>
+                <div id="№6_1">
+                    <img src="images/category8.jpg" alt="Категория 8" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+                    <p>Красота</p>
+                </div>
+            </div>
+            <div id="selector_1_4">
+                <div>
+                    <img src="images/category9.jpg" alt="Категория 9" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+                    <p>Авто</p>
+                </div>
+                <div>
+                    <img src="images/category10.webp" alt="Категория 10" style="max-width:100%; height:auto; max-height:150px; object-fit:cover;">
+                    <p>Подарки</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок с дополнительной информацией -->
+        <div id="Body_block2">
+            <h2>Наши преимущества</h2>
+            <ul>
+                <li>Быстрая доставка по всей стране</li>
+                <li>Гарантия качества</li>
+                <li>Удобные способы оплаты</li>
+                <li>Акции и скидки каждую неделю</li>
+            </ul>
+        </div>
+
+        <!-- Секция товаров -->
+        <a id="products"></a>
+        <div id="selector_2">
+ <div class="product-card">
+    <div class="badges">
+      <span class="badge recommend">СОВЕТУЕМ</span>
+      <span class="badge new">НОВИНКА</span>
+      <span class="badge sale">АКЦИЯ</span>
+      <span class="badge urgent">7 ДНЕЙ</span>
+    </div>
+    <div class="product-image">
+      <img src="Images/Category1.jpg" alt="Велосипедный рюкзак">
+    </div>
+    <h3 class="product-title">Велосипедный рюкзак</h3>
+    <div class="rating">
+      ★★★★☆
+    </div>
+    <div class="stock">
+      ✅ Мало
+    </div>
+    <div class="price">
+      <span class="new-price">1 529.10 руб. /шт</span><br>
+      <span class="old-price">1 699 руб.</span>
+    </div>
+    <div class="economy">
+      Экономия <span class="economy-value">169.90 руб.</span>
+    </div>
+  </div>
+ <div class="product-card">
+    <div class="badges">
+      <span class="badge recommend">СОВЕТУЕМ</span>
+      <span class="badge new">НОВИНКА</span>
+      <span class="badge sale">АКЦИЯ</span>
+      <span class="badge urgent">7 ДНЕЙ</span>
+    </div>
+    <div class="product-image">
+      <img src="Images/Category1.jpg" alt="Велосипедный рюкзак">
+    </div>
+    <h3 class="product-title">Велосипедный рюкзак</h3>
+    <div class="rating">
+      ★★★★☆
+    </div>
+    <div class="stock">
+      ✅ Мало
+    </div>
+    <div class="price">
+      <span class="new-price">1 529.10 руб. /шт</span><br>
+      <span class="old-price">1 699 руб.</span>
+    </div>
+    <div class="economy">
+      Экономия <span class="economy-value">169.90 руб.</span>
+    </div>
+  </div>
+ <div class="product-card">
+    <div class="badges">
+      <span class="badge recommend">СОВЕТУЕМ</span>
+      <span class="badge new">НОВИНКА</span>
+      <span class="badge sale">АКЦИЯ</span>
+      <span class="badge urgent">7 ДНЕЙ</span>
+    </div>
+    <div class="product-image">
+      <img src="Images/Category1.jpg" alt="Велосипедный рюкзак">
+    </div>
+    <h3 class="product-title">Велосипедный рюкзак</h3>
+    <div class="rating">
+      ★★★★☆
+    </div>
+    <div class="stock">
+      ✅ Мало
+    </div>
+    <div class="price">
+      <span class="new-price">1 529.10 руб. /шт</span><br>
+      <span class="old-price">1 699 руб.</span>
+    </div>
+    <div class="economy">
+      Экономия <span class="economy-value">169.90 руб.</span>
+    </div>
+  </div>
+ <div class="product-card">
+    <div class="badges">
+      <span class="badge recommend">СОВЕТУЕМ</span>
+      <span class="badge new">НОВИНКА</span>
+      <span class="badge sale">АКЦИЯ</span>
+      <span class="badge urgent">7 ДНЕЙ</span>
+    </div>
+    <div class="product-image">
+      <img src="Images/Category1.jpg" alt="Велосипедный рюкзак">
+    </div>
+    <h3 class="product-title">Велосипедный рюкзак</h3>
+    <div class="rating">
+      ★★★★☆
+    </div>
+    <div class="stock">
+      ✅ Мало
+    </div>
+    <div class="price">
+      <span class="new-price">1 529.10 руб. /шт</span><br>
+      <span class="old-price">1 699 руб.</span>
+    </div>
+    <div class="economy">
+      Экономия <span class="economy-value">169.90 руб.</span>
+    </div>
+  </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <div id="Footer">
+        <p>© 2025 Интернет-магазин</p>
+        <div id="Footer_block1">
+            Телефон: +7 919 523 35-95<br>
+            Email: info@shop.ru
+        </div>
+    </div>
+<!-- 
+ <div class="form-container">
+    <div class="form-wrapper">
+      <div class="form-header">Форма обратной связи</div>
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Введите ваше имя:</label>
+            <input type="text" placeholder="Например, Иван Иванович">
+          </div>
+          <div class="form-group">
+            <label>Введите адрес email:</label>
+            <input type="email" placeholder="Например, ivan@mail.ru">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Введите сообщение:</label>
+          <textarea placeholder="Введите сообщение от 20 до 500 символов"></textarea>
+        </div>
+        <div class="captcha-row">
+          <img id="captcha" src="https://dummyimage.com/120x40/1ca4e9/ffffff&text=Tt42Fu" alt="Капча">
+          <button type="button" onclick="refreshCaptcha()">🔄 Обновить</button>
+        </div>
+        <div class="form-group">
+          <label>Пожалуйста, введите указанный на изображении код:</label>
+          <input type="text">
+        </div>
+        <div class="submit-btn">
+          <button onclick="alert('Привет из атрибута!')">Отправить сообщение</button>
+        </div>
+      </form>
+    </div>
+  </div> -->
+
+
+ <!-- <div class="product-card">
+    <div class="badges">
+      <span class="badge recommend">СОВЕТУЕМ</span>
+      <span class="badge new">НОВИНКА</span>
+      <span class="badge sale">АКЦИЯ</span>
+      <span class="badge urgent">7 ДНЕЙ</span>
+    </div>
+    <div class="product-image">
+      <img src="https://via.placeholder.com/180x200?text=Рюкзак" alt="Велосипедный рюкзак">
+    </div>
+    <h3 class="product-title">Велосипедный рюкзак</h3>
+    <div class="rating">
+      ★★★★☆
+    </div>
+    <div class="stock">
+      ✅ Мало
+    </div>
+    <div class="price">
+      <span class="new-price">1 529.10 руб. /шт</span><br>
+      <span class="old-price">1 699 руб.</span>
+    </div>
+    <div class="economy">
+      Экономия <span class="economy-value">169.90 руб.</span>
+    </div>
+  </div> -->
+
+<div style="margin: 50px;">
+  <h3>Демонстрация скриптов JavaScript:</h3>
+  <button onclick="showDialogs()">Показать диалоговые окна</button>
+  <button onclick="checkConditions()">Проверка условий (if, switch)</button>
+  <button onclick="loopExamples()">Циклы (for, while, do..while)</button>
+  <button onclick="showDiscount()">Функция с return</button>
+</div>
+<script>
+  function showDialogs() {
+    alert("Добро пожаловать в магазин!");
+    const name = prompt("Как вас зовут?");
+    if (name) {
+      const confirmName = confirm(`Вы точно ${name}?`);
+      if (!confirmName) {
+        alert("Пожалуйста, введите имя заново.");
+      } else {
+        alert(`Приятно познакомиться, ${name}!`);
+      }
+    } else {
+      alert("Имя не указано.");
+    }
+  }
+
+  function checkConditions() {
+    const category = prompt("Введите категорию (Электроника, Одежда, Книги):");
+    if (!category) {
+      alert("Категория не указана.");
+      return;
+    }
+
+    switch (category) {
+      case "Электроника":
+        alert("Вы выбрали популярную категорию!");
+        break;
+      case "Одежда":
+        alert("Модный выбор!");
+        break;
+      case "Книги":
+        alert("Чтение — сила!");
+        break;
+      default:
+        alert("Вы сделали свой выбор ");
+    }
+  }
+
+  function loopExamples() {
+    let result = "";
+
+    result += "Цикл for:\n";
+    for (let i = 1; i <= 5; i++) {
+      if (i === 3) continue;
+      result += "Товар #" + i + "\n";
+    }
+
+    result += "\nЦикл while с break:\n";
+    let count = 0;
+    while (true) {
+      count++;
+      if (count > 3) break;
+      result += "Попытка загрузки #" + count + "\n";
+    }
+
+    result += "\nЦикл do..while:\n";
+    let x = 0;
+    do {
+      result += "Число: " + x + "\n";
+      x++;
+    } while (x < 2);
+
+    alert(result);
+  }
+
+  function showDiscount() {
+    const price = parseFloat(prompt("Введите цену товара, для нахождения скидки 10%:"));
+    if (isNaN(price)) {
+      alert("Вы ввели некорректную цену.");
+      return;
+    }
+
+    function getDiscount(price) {
+      if (price > 1000) return price * 0.9;
+      return price;
+    }
+
+    const finalPrice = getDiscount(price);
+    alert("Цена со скидкой: " + finalPrice.toFixed(2) + " руб.");
+  }
+</script>
+</body>
+</html>

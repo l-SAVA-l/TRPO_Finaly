@@ -1,0 +1,27 @@
+/* 1. Стиль <body> */
+body {
+     /* Цвет фна */
+     background-color: rgba(255, 166, 0, 0.671);
+     /* Шрифт */
+     font-family: Arial;
+     /* Размер шрифта */
+     font-size: 14pt;
+     /* Цвет шрифта  */
+     color: rgba(255, 0, 0, 0.616);
+ }
+ 
+ /* 4. Псевдоклассы ссылки */
+ a:link {
+     color: red;
+ }
+ a:visited {
+     color: rgba(128, 0, 0, 0.808);
+ }
+ a:hover {
+     color: green;
+     text-decoration: none; /* Убираем подчеркивание */
+ }
+ a:active {
+     color: black;
+ }
+ 

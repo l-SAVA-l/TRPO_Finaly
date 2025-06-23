@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, учебный проект">
+    <title>Торгонский Ф. Н.</title>
+    <script src="calc.js"></script>
+    <script>
+        function showTime() {
+            let now = new Date();
+            let hours = now.getHours().toString().padStart(2, '0');
+            let minutes = now.getMinutes().toString().padStart(2, '0');
+            alert(`Текущее время: ${hours}:${minutes}`);
+        }
+    </script>
+
+    <style>
+        body {
+            background-image: url('images/v1016-b-09.jpg'); 
+            font-size: 12pt;
+            font-family: "Times New Roman", Times, serif;
+            
+        }
+        .image-style {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 50px;
+            border: 2px solid lightblue;
+        }
+        .centered {
+            text-align: center;
+        }
+        table {
+            
+            border: 1px solid rgb(100, 100, 100);
+            border-collapse: collapse; /* Убирает двойные границы между ячейками */
+            
+            background-color: #f2f2f2; /* Фон таблицы */
+        }
+        ol {
+            list-style-type: upper-roman; /* Устанавливаем римские цифры */
+        }
+
+        form {
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 15px; /* Скругленные края */
+            padding: 30px;
+            margin: 20px auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 170px; /* Ширина формы */
+            font-family: Arial, sans-serif;
+        }
+    </style>
+<!--  -->
+</head>
+<body>
+
+  <div style="margin: 20px 0;">
+    <a href="Main_2.html"><button>Главная (Main_2)</button></a>
+    <a href="Lr_Main.html"><button>Лабораторные (Lr_Main)</button></a>
+    <a href="Card.html"><button>Карточка (Card)</button></a>
+    <a href="Card13-14.html"><button>Карточка 13-14</button></a>
+  </div>
+
+
+    <button onclick="showTime()">Показать год</button>
+    <!-- ФИО, курс и группа -->
+    
+    <h6 style="text-align: right;"><b>Торгонский Ф. Н.</b></h6>
+    <p style="font-weight: bold; color: blue;">Группа ПЗТ-41</p>
+     <!-- Внутренняя ссылка -->
+    <p id="kurs" style="text-align: right; vertical-align: sub;">Курс 3</p>
+
+    <!-- Мои увлечения -->
+    <h2 class="centered"><u>Мои увлечения</u></h2>
+    <p class="centered">Я увлекаюсь программированием, веб-дизайном и электроникой.</p>
+
+    <!-- Списки -->
+    
+    <h3>Времена года:</h3>
+    <ol start="4">
+        <li>Зима</li>
+        <li>Весна</li>
+        <li>Лето</li>
+    </ol>
+
+    <!-- Изображение -->
+    
+    <img src="Images/su-24.png" alt="Пример изображения" class="image-style"> 
+
+    <!-- Гиперссылка и внутренняя ссылка -->
+   
+    <div>
+        <a href="Card2.html"><img src="Images/MRAP.jpg" alt="Картинка-ссылка" width="50"></a> <!-- Картинка-гиперссылка -->
+    </div>
+    <p><a href="#kurs">Перейти к информации о курсе</a></p>
+
+    <!-- Таблица -->
+    
+    <table border="1" cellpadding="5">
+        <tr>
+            <th rowspan="2"></th>
+            <th colspan="2">Средний</th>
+            <th rowspan="2">Кол-во</th>
+        </tr>
+        <tr>
+            <th>рост</th>
+            <th>вес</th>
+        </tr>
+        <tr>
+            <td><strong>Мужчины</strong></td>
+            <td>1.9</td>
+            <td>0.003</td>
+            <td>40%</td>
+        </tr>
+        <tr>
+            <td><strong>Женщины</strong></td>
+            <td>1.7</td>
+            <td>0.002</td>
+            <td>43%</td>
+        </tr>
+    </table>
+
+    <!-- Форма -->
+    <form>
+        <label>Авторизация</label><br><br>
+        <input type="text" name="username" placeholder="Имя пользователя"><br><br>
+        <input type="password" name="password" placeholder="Пароль"><br><br>
+        <label><input type="checkbox"> Запомнить меня</label><br><br>
+        <button type="submit">Войти</button>
+        <button type="reset">Отмена</button>
+    </form>
+
+
+    <script>
+        let count = 0;
+        while (count < 17) {
+            document.write("Торгонский Федор<br>");
+            count++;
+        }
+    </script>
+ <h2>Результаты массивов</h2>
+        <script>
+        // Исходный массив из 7 целых чисел
+        let arr = [5, -3, 7, -1, 0, 4, -2];
+        document.write("Исходный массив: " + arr.join(", ") + "<br>");
+
+        // Вычисляем произведение отрицательных элементов
+        let product = 1;
+        let hasNegative = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                product *= arr[i];
+                hasNegative = true;
+            }
+        }
+
+        if (hasNegative) {
+            document.write("Произведение отрицательных элементов: " + product + "<br>");
+        } else {
+            document.write("Отрицательных элементов нет.<br>");
+        }
+
+        // Заменяем все отрицательные элементы на 100
+        let newArr = arr.map(num => num < 0 ? 100 : num);
+        document.write("Измененный массив: " + newArr.join(", "));
+    </script>   
+
+
+ <h2>Результаты вычислений:</h2>
+    <div id="results"></div>
+
+    <script>
+        const xs = [2, -7, 5, 0];
+        const resultsContainer = document.getElementById('results');
+
+        xs.forEach(x => {
+            const result = calculateY(x);
+            resultsContainer.innerHTML += `x = ${x}, y = ${result} <br>`;
+        });
+    </script>
+
+
+<h2>Результаты работы со строками:</h2>
+    <div id="output"></div>
+
+    <script>
+        // Исходные строки
+        let s1 = "Я люблю Беларусь";
+        let s2 = "Я учусь в Политехническом колледже";
+
+        // 1. Длина строки s1
+        let lengthS1 = s1.length;
+
+        // 2. 5-й символ и его ASCII-код
+        let char5 = s1[4];
+        let char5Code = char5.charCodeAt(0);
+
+        // 3. Замена всех "ю" на "№"
+        let replacedS1 = s1.replaceAll("ю", "№");
+
+        // Вывод на страницу
+        document.getElementById("output").innerHTML = `
+            <strong>s1:</strong> ${s1}<br>
+            <strong>s2:</strong> ${s2}<br><br>
+
+            1. Длина строки s1: ${lengthS1} символов<br>
+            2. Пятый символ строки s1: "${char5}", его ASCII-код: ${char5Code}<br>
+            3. Строка s1 после замены "ю" на "№": ${replacedS1}
+        `;
+    </script>
+</body>
+</html>

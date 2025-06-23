@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>Простая HTML-страница</title>
+
+    <style>
+      div> p {
+        color: green;
+        font-style: italic;
+      }
+      body {
+         font-family: 'Pacifico', cursive; 
+          background-color: #f0f8ff;
+        }
+      h1 {
+        color: darkblue;
+          }
+      i {
+        font-style: italic;
+          }
+      s {
+        text-decoration: line-through;
+          }
+      u {
+        text-decoration: underline;
+          }
+
+      /* Универсальный селектор */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    
+      /* Относительная единица измерения */
+      p {
+        font-size: 1.2em;
+      }
+    
+      /* Селектор-атрибутов */
+      input[type="text"] {
+        border: 2px solid #ccc;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    </style>
+    
+  </head>                          
+  <body>
+
+  <div style="margin: 20px 0;">
+    <a href="Main_2.html"><button>Главная (Main_2)</button></a>
+    <a href="Lr_Main.html"><button>Лабораторные (Lr_Main)</button></a>
+    <a href="Card.html"><button>Карточка (Card)</button></a>
+    <a href="Card13-14.html"><button>Карточка 13-14</button></a>
+  </div>
+
+
+    <h1 style="text-align: center; font-size: xx-large; color: navy;">Основная страница сайта</h1>
+
+    <p>Сегодня: <time datetime="2025-04-10">10 апреля 2025</time></p>
+
+    <p style="text-align: justify; font-size: large;" >
+      Первый абзац с определенным текстом, font-size :xx-large 
+    </p>
+    <p style="font-size: large;">
+      <i>
+      Второй абзац с курсивным текстом (i)
+      </i>
+    </p>
+    <p style="font-size: large;">
+      <u>
+        Пример подчеркнутого текста в абзаце 
+      </u>
+    </p>
+    <p style="font-size: large;">
+      <s>
+        Пример перечеркнутого текста в абзаце
+      </s>
+      </p>
+    <p style="font-size: large;">
+      Это абзац. <br>
+      Здесь идёт продолжение, но уже с новой строки. <br>
+      А это ещё один перенос строки. <br>
+      Таким образом, весь текст — в одном абзаце, но с визуальными переносами.
+    </p>
+    <!-- СПИСКИ -->
+    <p style="text-align: center; font-size: xx-large;">
+      Далее представлены списки: 
+    </p>
+    
+      <h2>Первый список</h2>
+      <ul style="font-size: x-large;">
+          <li>Первый подпункт</li>
+          <li>Второй подпункт</li>
+          <li>Третий подпункт</li>
+          <li>Четвертый подпункт</li>
+        </ul>
+    
+    
+      <h2>
+        Второй список </h2>
+        <ol style="font-size: x-large;">
+          <li>Первый подпункт</li>
+          <li>Второй подпункт</li>
+          <li>Третий подпункт</li>
+          <li>Четвертый подпункт</li>
+        </ol>
+    
+    <div style="text-align: center;">
+      <p style="font-size: x-large;">
+        Далее пример вставки картинки
+      </p>
+      
+      <img src="Images/Img23.png" style="border-radius: 20px; border: 3px solid #333; box-shadow: 0 0 10px gray;"  width="640"/>
+
+      <p style="font-size: x-large;"> Картинка1 </p>
+    </div>
+    <div id="vidaud">
+      <p>Далее вставлены аудио и видео файлы</p>
+      <audio controls>
+        <source src="audio/Morgen.mp3" type="audio/mp3">
+        Ваш браузер не поддерживает воспроизведение аудио.
+      </audio>
+    </div ><br>
+      <!--  -->
+    <div style="text-align: center">
+      <video width="640" height="360" controls autoplay muted loop>
+        <source src="video/Vidoe3.mp4" type="video/mp4">
+        <source src="Video/Video2.mp4" type="video/mp4">
+        <source src="Video/Video1.mp4" type="Video/mp4">
+      </video>
+    </div>
+    <!-- Таблица -->
+    <div id="table" style="text-align: center;">
+      <p style="font-size: x-large;">Далее представлен пример таблицы с объединениями</p>
+      <table>
+        <tr>
+          <th rowspan="2">Имя</th> <!-- Объединение ячеек по вертикали -->
+          <th colspan="2">Контакты</th> <!-- Объединение ячеек по горизонтали -->
+        </tr>
+        <tr>
+          <th>Email</th>
+          <th>Телефон</th>
+        </tr>
+        <tr>
+          <td>Иван</td>
+          <td>ivan@example.com</td>
+          <td>+375 29 456 7890</td>
+        </tr>
+        <tr>
+          <td>Мария</td>
+          <td>maria@example.com</td>
+          <td>+375 29 654 3210</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Петр</td> <!-- Объединение ячеек по вертикали -->
+          <td colspan="2">Нет данных</td> <!-- Объединение ячеек по горизонтали -->
+        </tr>
+        <tr>
+          <td colspan="2">Нет данных</td> <!-- Объединение ячеек по горизонтали -->
+        </tr>
+      </table>
+    </div>
+    <!-- ФОРМА -->
+    <br>
+    <div style="text-align: center;">
+    <p style="text-align: center; font-size: x-large;">Далее представлена форма</p><br>
+    <form action="Lr1-3_2.html" method="get" style="border: 10cm;">
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" required><br><br>
+    
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+    
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      
+      <label>Телефон:</label>
+      <input type="tel" id="tel" name="tel"><br><br>
+      
+      <label for="bio">О себе:</label><br>
+      <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Напишите о себе..."></textarea><br><br>
+        
+      <label for="country">Страна:</label>
+      <select id="country" name="country">
+        <option value="ru">Россия</option>
+        <option value="us">Беларусь</option>
+      </select><br><br>
+    
+      <button type="submit">Отправить</button>
+    </form>
+    </div>
+    
+
+    <div style="text-align:end; font-size: x-large;">
+      <p>Далее представлен пример гиперссылок </p>
+    </div>
+    <!-- Таблица -->
+    <div style="text-align: end; font-size: large;" >
+      <a href="#table">Перейти к таблице&amp;</a><br>
+      <a href="#vidaud">Перейти к видео и аудио&reg;</a><br>
+      <a href="Lr1-3_2.html">&gt;Перейти на страницу с различным медиа-контентом&lt;</a><br>
+      <a href="https://www.avsim.su/f/dokumentaciya-obschego-znacheniya-16/bombardirovschik-su-34-12209/download">Скачать документацию</a><br>
+      <a href="mailto:example@example.com">Написать на почту</a>
+    </div>
+
+    <div>
+      <div>
+        <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Наверх</button>
+      </div>
+    </div>
+    
+    <!-- ПОДВАЛ -->
+  <footer>
+    <p>&copy; 2025 Мой сайт</p>
+    <p><a href="Lr1-3_2.html">Политика конфиденциальности</a></p>
+    <p>Свяжитесь с нами: <a href="mailto:contact@example.com">contact@example.com</a></p>
+  </footer>
+</body>
+
+
+</html>
+
